@@ -22,6 +22,7 @@ public class Mbusqueda {
         System.out.println("Eliga uno de los metodos a buscar:");
         System.out.println("1.Busqueda secuencial");
         System.out.println("2.Busqueda Binara");
+        System.out.println("3.Busqueda Binaria con Recursividad");
         int opcionS = sc.nextInt();
         /*pedir datos*/
         System.out.println("A continuacion se realizara un array llenado de manera Aleatoria");
@@ -53,14 +54,17 @@ public class Mbusqueda {
                 int[] tmpArray3 = Ordenamiento.SelectionOrder(tmpArray, numEl);
                 System.out.println("El arreglo ordenado es");
                 PrintArray.Print(numEl, tmpArray3);
+                /*se calculan los valores de derecho e izquierdo  o y final de array*/
+                int izquierdo = 0;
+                int derecho =tmpArray3.length-1;
                 System.out.println("se procedera a busqueda binaria con recursividad");
-                int[]resArray=MBusRec.MBusRec(numSearch, tmpArray3);
-                if(resArray.length!=0){
-                System.out.println("El elemento se ha encontrado en las posiciones:");
-                PrintArray.Print(numEl, resArray);
+                int resNumber=MBusBinRec.MBusBinRec(tmpArray3, izquierdo, derecho, numSearch);
+                if(resNumber!=-1){
+                System.out.println("El elemento se ha encontrado en las posicion:"+resNumber);
                 }else{
-                    System.out.println("El elemento a buscar no esta en el array");
+                    System.out.println("El elemento a buscar no esta");
                 };
+                break;
             default:
                 System.out.println("elija una opcion valida");
                 break;

@@ -19,8 +19,6 @@ public class CreateArray {
         for (int i = 0; i < numEl; i++) {
             /*only generate from 0 to 100*/
             int nwEl = RandomNumber.nextInt(100);
-            System.out.println("El dato en la posicion " + i+"es"+nwEl);
-            /*Assign*/
             newArray[i] = nwEl;
         }
         return newArray;

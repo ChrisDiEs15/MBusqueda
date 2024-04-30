@@ -11,7 +11,7 @@ package mbusqueda;
  */
 public class MBusSec {
     public static void MBusSec(int[]numeros, int numBuscado  ){
-      boolean existe= false;
+      boolean existe= true;
         for(int b = 0; b < numeros.length; b++){
             
             if(numeros[b]==numBuscado){
@@ -20,10 +20,10 @@ public class MBusSec {
                 break;  
             }
             if(b == numeros.length-1){
-                existe = true;
+                existe = false;
             }
         }
-        if(existe==true){
+        if(existe==false){
             
             System.out.println("el numero no existe");
         }
